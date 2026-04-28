@@ -2,11 +2,17 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import PageHero from "@/components/layout/PageHero";
+import SEO from "@/components/SEO";
 import ukRegion from "@/assets/uk-region.jpg";
 
 const UKRegionPage = () => {
   return (
     <Layout>
+      <SEO
+        title="United Kingdom"
+        description="Planning-led strategic development, land promotion and major scheme delivery across England, Scotland and Wales. The primary operating territory for Wollaston Hanks."
+        path="/regions/united-kingdom"
+      />
       <PageHero
         title="United Kingdom"
         subtitle="Planning-led strategic development across England, Scotland and Wales"
@@ -15,13 +21,14 @@ const UKRegionPage = () => {
 
       <section className="py-20 bg-cream">
         <div className="container-narrow">
-          <h2 className="font-heading text-3xl text-navy mb-6">UK Operations</h2>
+          <span className="text-gold text-xs tracking-[0.2em] uppercase mb-3 block">Primary Market</span>
+          <h2 className="font-heading text-3xl text-navy mb-6">United Kingdom Operations</h2>
           <div className="gold-divider-left mb-8" />
           <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-            The United Kingdom is the primary operating territory for Wollaston Hanks. Deep understanding of the UK planning system, development economics and institutional investor landscape enables the platform to originate and deliver complex opportunities across all regions.
+            The United Kingdom is the primary operating territory for Wollaston Hanks. Deep understanding of the UK planning system, development economics and institutional investor landscape enables the platform to originate, structure and deliver complex opportunities across all regions of the country.
           </p>
           <p className="text-muted-foreground leading-relaxed">
-            The UK division focuses on planning-led development, strategic land promotion and major schemes — controlling the value chain from origination through to delivery.
+            The UK division focuses on planning-led development, strategic land promotion and major schemes — controlling the value chain from origination through delivery or strategic sale at the point of maximum value.
           </p>
         </div>
       </section>

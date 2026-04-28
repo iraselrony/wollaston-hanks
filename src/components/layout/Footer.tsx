@@ -11,8 +11,11 @@ const Footer = () => {
             <p className="text-xs tracking-[0.2em] uppercase text-gold/50 mb-4">
               Strategic Development & Investment Platform
             </p>
-            <p className="text-sm leading-relaxed">
-              Originating, structuring and delivering complex real estate opportunities across the United Kingdom and United States.
+            <p className="text-sm leading-relaxed mb-4">
+              Originating, structuring and delivering institutional-scale real estate opportunities across the United Kingdom and United States.
+            </p>
+            <p className="text-xs text-cream/40 leading-relaxed">
+              Selectively engaged. £50M+ GDV opportunities only.
             </p>
           </div>
 
@@ -62,9 +65,10 @@ const Footer = () => {
           <p className="text-xs text-cream/40">
             © {new Date().getFullYear()} Wollaston Hanks Ltd. All rights reserved.
           </p>
-          <div className="flex gap-6 text-xs text-cream/40">
+          <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-cream/40">
             <Link to="/privacy" className="hover:text-gold transition-colors">Privacy Policy</Link>
             <Link to="/terms" className="hover:text-gold transition-colors">Terms of Use</Link>
+            <Link to="/cookies" className="hover:text-gold transition-colors">Cookie Policy</Link>
           </div>
         </div>
       </div>

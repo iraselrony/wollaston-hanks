@@ -2,12 +2,18 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import PageHero from "@/components/layout/PageHero";
+import SEO from "@/components/SEO";
 import heroBg from "@/assets/hero-bg.jpg";
 import founderImg from "@/assets/founder-portrait.jpg";
 
 const AboutPage = () => {
   return (
     <Layout>
+      <SEO
+        title="About"
+        description="Wollaston Hanks is a planning-led strategic development and investment platform. Founded by Beau Banks (BSc, MSc, MRTPI, MNAEA) — operating across the UK and US."
+        path="/about"
+      />
       <PageHero
         title="About Wollaston Hanks"
         subtitle="A planning-led strategic development and investment platform"

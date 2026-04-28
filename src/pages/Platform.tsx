@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Building2, TrendingUp, Landmark, HardHat, Hammer, Zap, Eye, Paintbrush, Users, Cable } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import PageHero from "@/components/layout/PageHero";
+import SEO from "@/components/SEO";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const divisions = [
@@ -9,7 +10,7 @@ const divisions = [
     icon: Building2,
     title: "Strategic Development",
     subtitle: "Primary Wealth Engine",
-    description: "Originating and delivering high-value development opportunities through planning-led strategy. Strategic land promotion, mixed-use regeneration, hospitality and leisure development, major residential development and commercial redevelopment. This is where £5M – £20M+ outcomes occur.",
+    description: "Originating and delivering institutional-scale development opportunities through planning-led strategy. Strategic land promotion, mixed-use regeneration, hospitality and leisure development, major residential schemes and commercial redevelopment. The primary engine of the platform — operating at £50M–£500M+ GDV.",
     focus: ["Strategic Land Promotion", "Mixed-Use Regeneration", "Tourism & Leisure Development", "Major Residential Development", "Commercial Redevelopment"],
     revenue: ["Development fees", "Equity participation", "Profit share"],
     href: "/platform/strategic-development",
@@ -18,7 +19,7 @@ const divisions = [
     icon: TrendingUp,
     title: "Capital & Asset Advisory",
     subtitle: "Institutional Advisory Division",
-    description: "Advising investors, banks and asset owners on repositioning, development strategy and unlocking value from complex real estate. Development appraisal, asset repositioning strategy, distressed asset solutions, investment structuring and portfolio advisory.",
+    description: "Institutional-grade advisory to banks, property funds, family offices and asset managers on repositioning, development strategy and unlocking value from complex real estate. Engagements selectively structured around opportunity scale and complexity.",
     focus: ["Development & Investment Appraisal", "Asset Repositioning Strategy", "Distressed Asset Solutions", "Portfolio Advisory", "Investment Structuring"],
     revenue: ["Advisory fees", "Asset management roles", "Development partnerships"],
     href: "/platform/capital-advisory",
@@ -27,7 +28,7 @@ const divisions = [
     icon: Landmark,
     title: "Investment & Development Sales",
     subtitle: "Transaction & Cashflow Engine",
-    description: "Strategic acquisition and disposal of development and repositioning opportunities — not volume brokerage. Every transaction is approached as a potential development, repositioning or partnership opportunity ensuring maximum value creation.",
+    description: "Strategic acquisition and disposal of institutional-scale development and repositioning opportunities — including off-market mandates. Not volume brokerage. Every transaction is structured as a development, repositioning or partnership opportunity ensuring maximum value creation.",
     focus: ["Development Sites", "Strategic Land", "Commercial Investments", "Hospitality Assets", "Luxury Residential Advisory"],
     revenue: ["Brokerage commissions", "Acquisition advisory", "Development sales mandates"],
     href: "/platform/sales",
@@ -47,18 +48,24 @@ const supportingCapabilities = [
 const PlatformPage = () => {
   return (
     <Layout>
+      <SEO
+        title="The Platform"
+        description="Three integrated divisions — Strategic Development, Capital & Asset Advisory, and Investment & Development Sales — controlling and delivering institutional-scale real estate."
+        path="/platform"
+      />
       <PageHero
         title="The Platform"
-        subtitle="Three core divisions originating, structuring and delivering complex real estate opportunities"
+        subtitle="Three integrated divisions controlling and delivering institutional-scale real estate"
         backgroundImage={heroBg}
       />
 
       <section className="py-20 bg-cream">
         <div className="container-narrow text-center">
-          <h2 className="font-heading text-3xl text-navy mb-6">How We Operate</h2>
+          <span className="text-gold text-xs tracking-[0.2em] uppercase mb-3 block">How We Operate</span>
+          <h2 className="font-heading text-3xl text-navy mb-6">A Single Coordinated System</h2>
           <div className="gold-divider mb-8" />
           <p className="text-muted-foreground text-lg leading-relaxed">
-            Wollaston Hanks operates as a planning-led strategic development and investment platform. Every division is designed to originate opportunities, structure transactions and deliver development outcomes at scale.
+            Wollaston Hanks operates as a planning-led strategic development and investment platform — not three separate consultancies. Every division is designed to originate opportunities, structure transactions and deliver outcomes at institutional scale, working together as one coordinated platform.
           </p>
         </div>
       </section>

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { MapPin, ArrowRight } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import PageHero from "@/components/layout/PageHero";
+import SEO from "@/components/SEO";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const opportunities = [
@@ -74,6 +75,11 @@ const opportunities = [
 const OpportunitiesPage = () => {
   return (
     <Layout>
+      <SEO
+        title="Current Opportunities"
+        description="Active and pipeline development, regeneration and repositioning opportunities across the UK and US — £50M+ GDV, institutional scale, originated through controlled deal flow."
+        path="/opportunities"
+      />
       <PageHero
         title="Current Opportunities"
         subtitle="Institutional-scale development and repositioning opportunities across the UK and United States"

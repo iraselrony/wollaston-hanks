@@ -1,7 +1,10 @@
 import { useState } from "react";
+import { toast } from "sonner";
 import Layout from "@/components/layout/Layout";
 import PageHero from "@/components/layout/PageHero";
+import SEO from "@/components/SEO";
 import heroBg from "@/assets/hero-bg.jpg";
+import { submitForm } from "@/lib/submitForm";
 
 const SubmitOpportunity = () => {
   const [formData, setFormData] = useState({
@@ -20,18 +23,32 @@ const SubmitOpportunity = () => {
     description: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    const result = await submitForm("submit-opportunity", formData);
+    setLoading(false);
+    if (result.ok) {
+      toast.success("Submission received. The platform will respond to qualified opportunities within 5 working days.");
+      setSubmitted(true);
+    } else {
+      toast.error(result.message);
+    }
   };
 
   return (
     <Layout>
+      <SEO
+        title="Submit an Opportunity"
+        description="Submit a strategic land, development or repositioning opportunity to Wollaston Hanks. Selective platform — £50M+ GDV. Strict confidentiality."
+        path="/submit-opportunity"
+      />
       <PageHero
         title="Submit an Opportunity"
         subtitle="Wollaston Hanks reviews a limited number of opportunities. All submissions are assessed in strict confidence."
@@ -245,8 +262,12 @@ const SubmitOpportunity = () => {
               </div>
 
               <div className="text-center pt-2">
-                <button type="submit" className="px-12 py-4 bg-navy text-gold text-sm tracking-widest uppercase hover:bg-navy-light transition-colors border border-gold/40">
-                  Submit for Review
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="px-12 py-4 bg-navy text-gold text-sm tracking-widest uppercase hover:bg-navy-light transition-colors border border-gold/40 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {loading ? "Submitting..." : "Submit for Review"}
                 </button>
                 <p className="text-muted-foreground text-xs mt-4">
                   Submitted in strict confidence. The platform will respond to qualified opportunities within 5 working days.

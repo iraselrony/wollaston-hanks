@@ -2,28 +2,47 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import PageHero from "@/components/layout/PageHero";
+import SEO from "@/components/SEO";
 import strategicLand from "@/assets/strategic-land.jpg";
 import mixedUse from "@/assets/mixed-use-development.jpg";
 
 const StrategicDevelopment = () => {
   return (
     <Layout>
+      <SEO
+        title="Strategic Development"
+        description="The primary engine of the Wollaston Hanks platform. Planning-led origination, structuring and delivery of £50M-£500M+ strategic land, mixed-use regeneration and major development schemes."
+        path="/platform/strategic-development"
+      />
       <PageHero
         title="Strategic Development"
-        subtitle="Planning-led development strategy, land promotion and major project delivery"
+        subtitle="Planning-led origination and delivery of £50M–£500M+ development opportunities"
         backgroundImage={strategicLand}
       />
 
       <section className="py-20 bg-cream">
         <div className="container-narrow">
-          <h2 className="font-heading text-3xl text-navy mb-6">The Primary Wealth Engine</h2>
+          <span className="text-gold text-xs tracking-[0.2em] uppercase mb-3 block">Primary Engine</span>
+          <h2 className="font-heading text-3xl text-navy mb-6">Where Value Is Created</h2>
           <div className="gold-divider-left mb-8" />
           <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-            Strategic Development is the core engine of the Wollaston Hanks platform. The division identifies land and development opportunities with latent potential, applies planning-led strategy to unlock value, and structures transactions that deliver significant returns for all stakeholders.
+            Strategic Development is the core engine of the Wollaston Hanks platform — and where the majority of value is created. The division identifies land and development opportunities with latent potential, applies planning-led strategy to unlock value, and structures transactions that deliver institutional-scale outcomes.
           </p>
-          <p className="text-muted-foreground leading-relaxed">
-            The approach combines deep planning intelligence with commercial structuring — enabling the platform to take opportunities from initial appraisal through to delivery or strategic sale at the point of maximum value.
+          <p className="text-muted-foreground leading-relaxed mb-10">
+            The approach combines deep planning intelligence with commercial structuring — enabling the platform to take opportunities from origination through delivery or strategic sale at the point of maximum value.
           </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { label: "Typical Scale", value: "£50M–£500M+ GDV" },
+              { label: "Engagement", value: "Structured Partnerships" },
+              { label: "Alignment", value: "Performance-Led" },
+            ].map((stat) => (
+              <div key={stat.label} className="border border-gold/30 p-6">
+                <p className="text-gold text-xs tracking-[0.2em] uppercase mb-2">{stat.label}</p>
+                <p className="font-heading text-lg text-navy">{stat.value}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

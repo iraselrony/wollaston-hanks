@@ -2,11 +2,17 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import PageHero from "@/components/layout/PageHero";
+import SEO from "@/components/SEO";
 import usRegion from "@/assets/us-region.jpg";
 
 const USRegionPage = () => {
   return (
     <Layout>
+      <SEO
+        title="United States"
+        description="Asset repositioning, hospitality development, investment transactions and strategic development partnerships across key US markets — New York, Florida, California."
+        path="/regions/united-states"
+      />
       <PageHero
         title="United States"
         subtitle="Asset repositioning, investment transactions and development partnerships"
@@ -15,13 +21,14 @@ const USRegionPage = () => {
 
       <section className="py-20 bg-cream">
         <div className="container-narrow">
-          <h2 className="font-heading text-3xl text-navy mb-6">US Operations</h2>
+          <span className="text-gold text-xs tracking-[0.2em] uppercase mb-3 block">Expanding Operations</span>
+          <h2 className="font-heading text-3xl text-navy mb-6">United States Operations</h2>
           <div className="gold-divider-left mb-8" />
           <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-            Wollaston Hanks is expanding operations into the United States, focusing on asset repositioning, investment transactions and strategic development partnerships across key markets including New York, Florida and California.
+            Wollaston Hanks operates in the United States with a focus on asset repositioning, hospitality development, investment transactions and strategic development partnerships — across key markets including New York, Florida and California.
           </p>
           <p className="text-muted-foreground leading-relaxed">
-            The US division brings a strategic, institutional-grade approach to the American market — identifying repositioning opportunities and structuring transactions that unlock significant value.
+            The US division brings the same planning-led, institutional-grade approach to the American market — identifying repositioning opportunities, structuring transactions and delivering outcomes that unlock significant value.
           </p>
         </div>
       </section>

@@ -1,7 +1,8 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Building2, TrendingUp, Landmark, MapPin, Hammer, Eye, Paintbrush, Users, Zap, HardHat } from "lucide-react";
+import { ArrowRight, Building2, TrendingUp, Landmark, MapPin, Hammer, Eye, Paintbrush, Users, Zap, HardHat, ShieldCheck, Lock, Award } from "lucide-react";
 import Layout from "@/components/layout/Layout";
+import SEO, { SITE_URL, SITE_NAME } from "@/components/SEO";
 import heroBg from "@/assets/hero-bg.jpg";
 import marinaDev from "@/assets/marina-development.jpg";
 import mixedUse from "@/assets/mixed-use-development.jpg";
@@ -85,8 +86,51 @@ const Index = () => {
     }
   }, []);
 
+  const jsonLd = useMemo(
+    () => [
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        name: SITE_NAME,
+        legalName: "Wollaston Hanks Ltd",
+        url: SITE_URL,
+        logo: `${SITE_URL}/og-image.jpg`,
+        description:
+          "Planning-led strategic development and investment platform originating, structuring and delivering institutional-scale real estate opportunities across the UK and US.",
+        founder: {
+          "@type": "Person",
+          name: "Beau Banks",
+          jobTitle: "Founder & Development Director",
+          honorificSuffix: "BSc (Hons), MSc, MRTPI, MNAEA",
+        },
+        areaServed: ["United Kingdom", "United States"],
+        knowsAbout: [
+          "Strategic Land Promotion",
+          "Mixed-Use Regeneration",
+          "Asset Repositioning",
+          "Capital Advisory",
+          "Development Delivery",
+        ],
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        url: SITE_URL,
+        name: SITE_NAME,
+        inLanguage: "en-GB",
+      },
+    ],
+    [],
+  );
+
   return (
     <Layout>
+      <SEO
+        title="Wollaston Hanks | Strategic Development & Investment Platform"
+        description="Planning-led strategic development and investment platform — originating, structuring and delivering £50M+ real estate opportunities across the UK and United States."
+        path="/"
+        jsonLd={jsonLd}
+      />
       {/* Section 1 — Hero with Video */}
       <section className="relative min-h-screen flex items-center justify-center text-center">
         <video
@@ -465,6 +509,70 @@ const Index = () => {
                 />
                 <div className="absolute inset-0 border border-gold/20" />
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Recognition / Accreditations Strip */}
+      <section className="py-14 bg-navy-dark border-y border-gold/10">
+        <div className="container-wide">
+          <div className="text-center mb-10">
+            <span className="text-gold text-xs tracking-[0.25em] uppercase">Professional Standards & Authority</span>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center text-center">
+            {[
+              { label: "MRTPI", desc: "Royal Town Planning Institute" },
+              { label: "MNAEA", desc: "National Association of Estate Agents" },
+              { label: "MSc", desc: "Planning for Major Projects" },
+              { label: "Institutional", desc: "Grade Approach" },
+            ].map((item) => (
+              <div key={item.label} className="border-l border-gold/20 px-6 py-2 first:border-l-0">
+                <p className="font-heading text-2xl text-gold mb-1">{item.label}</p>
+                <p className="text-cream/40 text-xs tracking-wider uppercase">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Private Office Section */}
+      <section className="py-20 bg-cream">
+        <div className="container-wide">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <span className="text-gold text-xs tracking-[0.2em] uppercase mb-4 block">Private Office</span>
+              <h2 className="font-heading text-3xl md:text-4xl text-navy mb-6">
+                Discreet Advisory for Private Capital
+              </h2>
+              <div className="gold-divider-left mb-8" />
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Beyond the institutional platform, Wollaston Hanks operates a private office offering discreet, relationship-driven advisory for UHNW individuals, family offices and private capital — including off-market access to high-end residential, country estates and structured development opportunities.
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-8">
+                This is not estate agency. It is private, selective and confidential — engaged only by introduction or direct enquiry.
+              </p>
+              <ul className="space-y-3 mb-10">
+                {[
+                  { icon: Lock, label: "Off-market opportunities" },
+                  { icon: ShieldCheck, label: "Strict confidentiality protocols" },
+                  { icon: Award, label: "Institutional-grade execution" },
+                ].map((item) => (
+                  <li key={item.label} className="flex items-center gap-3 text-muted-foreground text-sm">
+                    <item.icon className="w-4 h-4 text-gold shrink-0" /> {item.label}
+                  </li>
+                ))}
+              </ul>
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 px-6 py-3 border border-navy text-navy text-sm tracking-wider uppercase hover:bg-navy hover:text-cream transition-all"
+              >
+                Private Enquiry <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <img src={luxuryRes} alt="Private residential" className="w-full aspect-[3/4] object-cover" loading="lazy" />
+              <img src={hotelRepo} alt="Private hospitality" className="w-full aspect-[3/4] object-cover mt-8" loading="lazy" />
             </div>
           </div>
         </div>

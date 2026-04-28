@@ -3,6 +3,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import ScrollToTop from "@/components/ScrollToTop";
+import CookieConsent from "@/components/CookieConsent";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import PlatformPage from "./pages/Platform.tsx";
@@ -19,6 +21,9 @@ import USRegionPage from "./pages/USRegion.tsx";
 import AboutPage from "./pages/About.tsx";
 import SubmitOpportunity from "./pages/SubmitOpportunity.tsx";
 import ContactPage from "./pages/Contact.tsx";
+import Privacy from "./pages/Privacy.tsx";
+import Terms from "./pages/Terms.tsx";
+import Cookies from "./pages/Cookies.tsx";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +33,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/platform" element={<PlatformPage />} />
@@ -44,8 +50,12 @@ const App = () => (
           <Route path="/about" element={<AboutPage />} />
           <Route path="/submit-opportunity" element={<SubmitOpportunity />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/cookies" element={<Cookies />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <CookieConsent />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
