@@ -113,27 +113,27 @@ const Index = () => {
           </h1>
           <div className="flex items-center justify-center gap-4 mb-6">
             <div className="w-12 h-px bg-gold/60" />
-            <span className="text-gold text-xs tracking-[0.25em] uppercase">Strategic Development</span>
+            <span className="text-gold text-xs tracking-[0.25em] uppercase">Strategic Development & Investment Platform</span>
             <div className="w-12 h-px bg-gold/60" />
           </div>
           <p className="text-cream/80 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-4">
-            Planning-Led Strategic Development & Investment Platform
+            Originating & Delivering £50M+ Strategic Development Opportunities
           </p>
           <p className="text-cream/60 text-base max-w-2xl mx-auto mb-10">
-            Wollaston Hanks originates, structures and delivers complex real estate opportunities through planning intelligence, development strategy, asset repositioning and capital partnerships.
+            Wollaston Hanks controls, structures and originates institutional-scale real estate — from strategic land and major regeneration through to complex asset repositioning and capital partnerships. Selective by design.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              to="/contact"
+              to="/submit-opportunity"
               className="px-8 py-3.5 border border-gold text-gold text-sm tracking-widest uppercase hover:bg-gold hover:text-navy transition-all"
             >
-              Discuss a Development Opportunity
+              Submit an Opportunity
             </Link>
             <Link
-              to="/submit-opportunity"
+              to="/contact"
               className="px-8 py-3.5 border border-cream/30 text-cream/80 text-sm tracking-widest uppercase hover:border-gold hover:text-gold transition-all"
             >
-              Submit Land or Property
+              Discuss a Development Opportunity
             </Link>
           </div>
         </div>
@@ -143,15 +143,27 @@ const Index = () => {
       <section className="py-20 bg-cream">
         <div className="container-narrow text-center">
           <h2 className="font-heading text-3xl md:text-4xl text-navy mb-6">
-            Unlocking Complex Property & Land Opportunities
+            We Do Not Advise. We Control, Structure and Deliver.
           </h2>
           <div className="gold-divider mb-8" />
           <p className="text-muted-foreground text-lg leading-relaxed max-w-3xl mx-auto mb-4">
-            Unlocking complex property and land opportunities across strategic land, distressed assets and underperforming real estate.
+            Wollaston Hanks is a planning-led strategic development and investment platform — not a consultancy, not an advisory firm. The platform originates, structures and controls high-value opportunities across strategic land, distressed assets and complex institutional real estate.
           </p>
-          <p className="text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-            We work with landowners, investors, developers and institutions to identify opportunity, design strategy and deliver outcomes.
+          <p className="text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-8">
+            Engagements are structured based on opportunity scale and complexity. We selectively partner on a limited number of high-value opportunities — aligned with value creation and long-term outcomes, not hours or retainers.
           </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 text-left">
+            {[
+              { label: "Minimum Opportunity Scale", value: "£50M+ GDV" },
+              { label: "Engagement Model", value: "Structured Partnerships" },
+              { label: "Alignment", value: "Performance & Outcome-Led" },
+            ].map((stat) => (
+              <div key={stat.label} className="border border-gold/30 p-6">
+                <p className="text-gold text-xs tracking-[0.2em] uppercase mb-2">{stat.label}</p>
+                <p className="font-heading text-xl text-navy">{stat.value}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -162,11 +174,32 @@ const Index = () => {
             <h2 className="font-heading text-3xl md:text-4xl text-navy mb-4">The Platform</h2>
             <div className="gold-divider mb-4" />
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Three core divisions originating, structuring and delivering complex real estate opportunities.
+              Three integrated divisions — originating, structuring and delivering institutional-scale real estate across the UK and United States.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {platformDivisions.map((division) => (
+          {/* Strategic Development — dominant featured card */}
+          <Link
+            to="/platform/strategic-development"
+            className="group block border border-gold/40 bg-navy p-12 mb-6 hover:border-gold transition-all hover:shadow-xl"
+          >
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+              <div className="flex-1">
+                <span className="text-gold text-xs tracking-[0.2em] uppercase mb-3 block">Primary Engine</span>
+                <Building2 className="w-9 h-9 text-gold mb-4" />
+                <h3 className="font-heading text-2xl md:text-3xl text-cream mb-3 group-hover:text-gold transition-colors">
+                  Strategic Development
+                </h3>
+                <p className="text-cream/60 leading-relaxed max-w-2xl">
+                  The core engine of the platform. Identifying land and development opportunities with latent potential, applying planning intelligence to unlock value, and controlling transactions from origination through delivery or strategic sale at maximum value. £50M–£500M+ GDV.
+                </p>
+              </div>
+              <span className="text-gold text-sm flex items-center gap-2 group-hover:gap-4 transition-all shrink-0">
+                Explore Division <ArrowRight className="w-4 h-4" />
+              </span>
+            </div>
+          </Link>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {platformDivisions.slice(1).map((division) => (
               <Link
                 key={division.title}
                 to={division.href}
@@ -192,11 +225,11 @@ const Index = () => {
       <section className="py-20 bg-navy">
         <div className="container-wide">
           <div className="text-center mb-14">
-            <span className="text-gold text-xs tracking-[0.2em] uppercase mb-3 block">Execution Capability</span>
-            <h2 className="font-heading text-3xl md:text-4xl text-cream mb-4">Development Delivery</h2>
+            <span className="text-gold text-xs tracking-[0.2em] uppercase mb-3 block">Proof of Execution</span>
+            <h2 className="font-heading text-3xl md:text-4xl text-cream mb-4">Full-Cycle Delivery Capability</h2>
             <div className="gold-divider mb-6" />
             <p className="text-cream/60 max-w-2xl mx-auto">
-              Wollaston Hanks provides full-cycle capability from concept through to execution — reinforcing that the platform controls and delivers projects.
+              The platform does not outsource control. Wollaston Hanks maintains in-house delivery capability across every stage — from planning and design through infrastructure, construction management and sale. This is what gives high-value clients confidence.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -213,7 +246,7 @@ const Index = () => {
               to="/platform/development-delivery"
               className="inline-flex items-center gap-2 text-gold text-sm tracking-wider uppercase hover:gap-3 transition-all"
             >
-              Explore Delivery Capability <ArrowRight className="w-4 h-4" />
+              View Delivery Capability <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
@@ -307,38 +340,42 @@ const Index = () => {
       <section className="py-20 bg-navy">
         <div className="container-wide">
           <div className="text-center mb-14">
-            <span className="text-gold text-xs tracking-[0.2em] uppercase mb-3 block">Current Pipeline</span>
-            <h2 className="font-heading text-3xl md:text-4xl text-cream mb-4">Active Opportunities</h2>
-            <div className="gold-divider" />
+            <span className="text-gold text-xs tracking-[0.2em] uppercase mb-3 block">Active Deal Flow</span>
+            <h2 className="font-heading text-3xl md:text-4xl text-cream mb-4">Current Opportunities</h2>
+            <div className="gold-divider mb-4" />
+            <p className="text-cream/50 max-w-xl mx-auto text-sm">
+              Opportunities are originated through planning portals, banks, insolvency practitioners, agents and direct landowner relationships. All are institutional-scale.
+            </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { title: "Strategic Land Promotion", location: "South East, UK", type: "Development" },
-              { title: "Mixed-Use Regeneration Site", location: "Northern England", type: "Regeneration" },
-              { title: "Hotel Repositioning", location: "Coastal Resort", type: "Repositioning" },
-              { title: "Development Partnership", location: "Greater London", type: "Partnership" },
+              { title: "Strategic Land Promotion", location: "South East, UK", type: "Strategic Development", gdv: "£75M–£150M GDV" },
+              { title: "Mixed-Use Regeneration Site", location: "Northern England", type: "Regeneration", gdv: "£120M+ GDV" },
+              { title: "Hotel Repositioning", location: "Coastal Resort, UK", type: "Asset Repositioning", gdv: "£50M–£90M GDV" },
+              { title: "Development Partnership", location: "Greater London", type: "Development Partnership", gdv: "£200M+ GDV" },
             ].map((opp) => (
               <div key={opp.title} className="border border-gold/20 p-6 hover:border-gold/40 transition-all">
                 <span className="text-gold text-xs tracking-wider uppercase">{opp.type}</span>
                 <h3 className="font-heading text-lg text-cream mt-3 mb-2">{opp.title}</h3>
-                <p className="text-cream/50 text-sm flex items-center gap-2">
+                <p className="text-cream/50 text-sm flex items-center gap-2 mb-3">
                   <MapPin className="w-3.5 h-3.5" /> {opp.location}
                 </p>
+                <p className="text-gold/70 text-xs tracking-wider font-medium">{opp.gdv}</p>
               </div>
             ))}
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
             <Link
-              to="/opportunities"
+              to="/submit-opportunity"
               className="inline-flex items-center gap-2 px-6 py-3 border border-gold text-gold text-sm tracking-wider uppercase hover:bg-gold hover:text-navy transition-all"
             >
-              View Opportunities <ArrowRight className="w-4 h-4" />
+              Submit an Opportunity <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
-              to="/submit-opportunity"
+              to="/opportunities"
               className="inline-flex items-center gap-2 px-6 py-3 border border-cream/30 text-cream/70 text-sm tracking-wider uppercase hover:border-gold hover:text-gold transition-all"
             >
-              Submit an Opportunity <ArrowRight className="w-4 h-4" />
+              View All Opportunities <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
@@ -437,18 +474,21 @@ const Index = () => {
       <section className="py-20 bg-navy text-center">
         <div className="container-narrow">
           <h2 className="font-heading text-3xl md:text-4xl text-cream mb-6">
-            Unlock Value in Complex Real Estate
+            Operating at the Top of the Market
           </h2>
           <div className="gold-divider mb-8" />
-          <p className="text-cream/70 text-lg leading-relaxed max-w-2xl mx-auto mb-10">
-            Whether you are a landowner, investor, developer or institution — Wollaston Hanks provides the strategic capability to originate, structure and deliver £50M+ development opportunities.
+          <p className="text-cream/70 text-lg leading-relaxed max-w-2xl mx-auto mb-4">
+            Wollaston Hanks selectively partners on a limited number of high-value opportunities. Engagements are structured around opportunity scale, complexity and long-term value creation — not retainers or time-based fees.
+          </p>
+          <p className="text-cream/50 text-sm max-w-xl mx-auto mb-10">
+            If you have a strategic land, development, repositioning or investment opportunity at £50M+ scale — we would like to hear from you.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/submit-opportunity"
               className="px-8 py-3.5 border border-gold text-gold text-sm tracking-widest uppercase hover:bg-gold hover:text-navy transition-all"
             >
-              Submit Development Opportunity
+              Submit an Opportunity
             </Link>
             <Link
               to="/contact"
